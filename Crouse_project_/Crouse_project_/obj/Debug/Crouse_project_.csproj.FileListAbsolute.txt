@@ -1,0 +1,12 @@
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\bin\Debug\Crouse_project_.exe.config
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\bin\Debug\Crouse_project_.exe
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\bin\Debug\Crouse_project_.pdb
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\bin\Debug\Guna.UI2.dll
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.csproj.AssemblyReference.cache
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.fmLogin.resources
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.Properties.Resources.resources
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.csproj.GenerateResource.cache
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.csproj.CoreCompileInputs.cache
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.csproj.CopyComplete
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.exe
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.pdb
