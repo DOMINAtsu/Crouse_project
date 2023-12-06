@@ -16,5 +16,10 @@ namespace Crouse_project_
         {
             InitializeComponent();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

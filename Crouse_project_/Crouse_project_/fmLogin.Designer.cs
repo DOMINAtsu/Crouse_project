@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUser = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPass = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -52,6 +52,29 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(309, 178);
             this.guna2Panel1.TabIndex = 4;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::Crouse_project_.Properties.Resources._1946429;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(92, 32);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(114, 91);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 9;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(12, 146);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(182, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Please enter user information.";
             // 
             // label1
             // 
@@ -94,11 +117,12 @@
             this.txtPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPass.Location = new System.Drawing.Point(44, 295);
             this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '\0';
+            this.txtPass.PasswordChar = '●';
             this.txtPass.PlaceholderText = "";
             this.txtPass.SelectedText = "";
             this.txtPass.Size = new System.Drawing.Size(228, 36);
             this.txtPass.TabIndex = 1;
+            this.txtPass.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -145,29 +169,6 @@
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 146);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Please enter user information.";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::Crouse_project_.Properties.Resources._1946429;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(92, 32);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(114, 91);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 9;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // guna2MessageDialog1
             // 
             this.guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
@@ -191,7 +192,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

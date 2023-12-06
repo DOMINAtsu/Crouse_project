@@ -11,7 +11,7 @@ namespace Crouse_project_
     internal class MainClass
     {
 
-        public static readonly string con_string = "Data Source=PROSTOVLAD-PC; Initial Catalog=RM;Persist Security Info=True; User ID=sa; Password=123;";
+        public static readonly string con_string = $"Data Source={Environment.MachineName}; Initial Catalog=RM;Integrated Security=True;";
 
         public static SqlConnection con = new SqlConnection(con_string);
 
@@ -20,8 +20,9 @@ namespace Crouse_project_
         public static bool IsValidUser(string user, string pass)
         {
             bool isValid = false;
+            //string qry = @"SELECT * FROM [user] WHERE username  = 'user' "
+            string qry = @"Select * from user where username ='" + user + "' and upass = '" + pass + "'";
 
-            string qry = @"Select * from user where username ='" + user + "' and upass = '" + pass + "' ";
             SqlCommand cmd = new SqlCommand(qry, con);
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);

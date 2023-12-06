@@ -70,6 +70,9 @@
     <EmbeddedResource Include="fmLogin.resx">
       <DependentUpon>fmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -96,6 +99,57 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1946429.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eat-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-250.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-250 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-categorize-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-categorize-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-products-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-products-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tables-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tables-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-name-tag-woman-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-name-tag-woman-100 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pos-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pos-100 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-kitchen-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-kitchen-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-setting-250.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-setting-250 %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
