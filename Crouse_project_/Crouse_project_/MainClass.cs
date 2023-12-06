@@ -20,8 +20,8 @@ namespace Crouse_project_
         public static bool IsValidUser(string user, string pass)
         {
             bool isValid = false;
-            //string qry = @"SELECT * FROM [user] WHERE username  = 'user' "
-            string qry = @"Select * from user where username ='" + user + "' and upass = '" + pass + "'";
+
+            string qry = @"Select * from users where username ='" + user + "' and upass ='" + pass + "' ";
 
             SqlCommand cmd = new SqlCommand(qry, con);
             DataTable dt = new DataTable();
@@ -31,10 +31,22 @@ namespace Crouse_project_
             if (dt.Rows.Count > 0)
             {
                 isValid = true;
+                USER = dt.Rows[0]["uName"].ToString();
             }
 
             return isValid;
         }
+        // Create property for username
 
+        public static string user;
+
+        public static string USER
+        {
+            get { return user; }
+            private set { user = value; }
+        }
+        
+
+       
     }
 }
