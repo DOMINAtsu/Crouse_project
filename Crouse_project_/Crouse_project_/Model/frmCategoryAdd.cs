@@ -21,5 +21,10 @@ namespace Crouse_project_.Model
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
