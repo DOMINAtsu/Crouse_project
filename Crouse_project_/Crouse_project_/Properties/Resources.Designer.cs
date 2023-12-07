@@ -93,6 +93,16 @@ namespace Crouse_project_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_delete_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-delete-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_eat_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-eat-100", resourceCulture);
@@ -163,6 +173,16 @@ namespace Crouse_project_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_pen_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pen-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_pos_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-pos-100", resourceCulture);
@@ -196,6 +216,26 @@ namespace Crouse_project_.Properties {
         internal static System.Drawing.Bitmap icons8_products_64__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-products-64 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_128 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search-128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_512 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search-512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

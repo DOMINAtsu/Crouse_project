@@ -19,7 +19,7 @@ namespace Crouse_project_
 
         // Methord to add Controls in Main Form
 
-        public /*static*/ void AddControls(Form f)
+        public void AddControls(Form f)
         {
             ControlsPanel.Controls.Clear();
             f.Dock = DockStyle.Fill;
