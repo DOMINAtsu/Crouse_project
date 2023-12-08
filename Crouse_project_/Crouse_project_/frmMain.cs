@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Crouse_project_.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,6 +47,11 @@ namespace Crouse_project_
         private void btnHome_Click(object sender, EventArgs e)
         {
             AddControls(new frmHome1());
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmCategoryView());
         }
     }
 }

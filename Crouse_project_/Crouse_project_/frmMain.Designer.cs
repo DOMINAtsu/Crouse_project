@@ -264,6 +264,7 @@
             this.btnCategory.Text = "Categories";
             this.btnCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCategory.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
             // 
             // btnHome
             // 

@@ -70,3 +70,5 @@ C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\
 C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.SampleView.resources
 C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.View.frmCategoryView.resources
 C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.Model.frmCategoryAdd.resources
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\bin\Debug\log4net.dll
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\bin\Debug\log4net.xml
