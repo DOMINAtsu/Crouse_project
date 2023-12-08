@@ -11,24 +11,14 @@ using System.Windows.Forms;
 
 namespace Crouse_project_.Model
 {
-    public partial class frmCategoryAdd : SampleAdd
+    public partial class frmTableAdd : SampleAdd
     {
-        public frmCategoryAdd()
+        public frmTableAdd()
         {
             InitializeComponent();
         }
 
-        private void frmCategoryAdd_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public int id = 0;
-
-        public override void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         public override void btnSave_Click(object sender, EventArgs e)
         {
@@ -36,11 +26,11 @@ namespace Crouse_project_.Model
 
             if (id == 0) //Insert
             {
-                qry = "Insert into category Values(@Name)";
+                qry = "Insert into tables Values(@Name)";
             }
             else //Update
             {
-                qry = "Update category Set catName = @Name where catID = @id ";
+                qry = "Update tables Set tName = @Name where tID = @id ";
             }
 
             Hashtable ht = new Hashtable();

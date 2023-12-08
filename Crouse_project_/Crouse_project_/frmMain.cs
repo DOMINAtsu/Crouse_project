@@ -18,6 +18,13 @@ namespace Crouse_project_
             InitializeComponent();
         }
 
+        //for accessing frm main
+        static frmMain _obj;
+        public static frmMain Instance
+        {
+            get { if (_obj == null) { _obj = new frmMain(); } return _obj;  }
+        }
+
         // Methord to add Controls in Main Form
 
         public void AddControls(Form f)
@@ -32,6 +39,7 @@ namespace Crouse_project_
         private void frmMain_Load(object sender, EventArgs e)
         {
             lblUser.Text = MainClass.USER;
+            _obj = this;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -52,6 +60,11 @@ namespace Crouse_project_
         private void btnCategory_Click(object sender, EventArgs e)
         {
             AddControls(new frmCategoryView());
+        }
+
+        private void btnTable_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmTableView());
         }
     }
 }
