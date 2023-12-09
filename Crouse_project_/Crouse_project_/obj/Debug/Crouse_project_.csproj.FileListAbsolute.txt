@@ -78,3 +78,5 @@ C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\
 C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.Model.frmStaffAdd.resources
 C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.Model.frmProductAdd.resources
 C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.View.frmProductView.resources
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.Model.frmPOS.resources
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.Model.ucProduct.resources
