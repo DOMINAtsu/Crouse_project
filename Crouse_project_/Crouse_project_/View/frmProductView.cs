@@ -55,11 +55,10 @@ namespace Crouse_project_.View
             if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvedit")
             {
                 // this is change as we have to set form text properties befort open
-                frmStaffAdd frm = new frmStaffAdd();
+                frmProductAdd frm = new frmProductAdd();
                 frm.id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
-                frm.txtName.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvName"].Value);
-                frm.txtPhone.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvPhone"].Value);
-                frm.cbRole.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvRole"].Value);
+                frm.cID = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvcatID"].Value);
+               
                 MainClass.BlurBackground(frm);
                 GetData();
 
