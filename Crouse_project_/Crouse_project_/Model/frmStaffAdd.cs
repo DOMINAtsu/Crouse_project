@@ -11,19 +11,19 @@ using System.Windows.Forms;
 
 namespace Crouse_project_.Model
 {
-    public partial class frmCategoryAdd : SampleAdd
+    public partial class frmStaffAdd : SampleAdd
     {
-        public frmCategoryAdd()
+        public frmStaffAdd()
         {
             InitializeComponent();
         }
 
-        private void frmCategoryAdd_Load(object sender, EventArgs e)
+        public int id = 0;
+
+        private void frmStaffAdd_Load(object sender, EventArgs e)
         {
 
         }
-
-        public int id = 0;
 
         public override void btnClose_Click(object sender, EventArgs e)
         {
@@ -36,22 +36,26 @@ namespace Crouse_project_.Model
 
             if (id == 0) //Insert
             {
-                qry = "Insert into category Values(@Name)";
+                qry = "Insert into staff Values(@Name, @Phone,@role)";
             }
             else //Update
             {
-                qry = "Update category Set catName = @Name where catID = @id ";
+                qry = "Update staff Set sName = @Name , sPhone = @Phone, sRole = @role where staffID = @id ";
             }
 
             Hashtable ht = new Hashtable();
             ht.Add("@id", id);
             ht.Add("@Name", txtName.Text);
+            ht.Add("@Phone", txtPhone.Text);
+            ht.Add("@role", cbRole.Text);
 
             if (MainClass.SQL(qry, ht) > 0)
             {
                 guna2MessageDialog1.Show("Saved succesfully...");
                 id = 0;
                 txtName.Text = "";
+                txtPhone.Text = "";
+                cbRole.SelectedIndex = -1;
                 txtName.Focus();
             }
         }

@@ -74,3 +74,7 @@ C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\
 C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\bin\Debug\log4net.xml
 C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.View.frmTableView.resources
 C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.Model.frmTableAdd.resources
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.View.frmStaffView.resources
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.Model.frmStaffAdd.resources
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.Model.frmProductAdd.resources
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.View.frmProductView.resources

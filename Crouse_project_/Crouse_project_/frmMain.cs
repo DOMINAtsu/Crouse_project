@@ -66,5 +66,15 @@ namespace Crouse_project_
         {
             AddControls(new frmTableView());
         }
+
+        private void btnStaff_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmStaffView());
+        }
+
+        private void bntProduct_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmProductView());
+        }
     }
 }

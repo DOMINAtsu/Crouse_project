@@ -180,6 +180,7 @@
             this.btnStaff.Text = "Staff";
             this.btnStaff.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnStaff.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
             // 
             // btnTable
             // 
@@ -237,6 +238,7 @@
             this.bntProduct.Text = "Products";
             this.bntProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.bntProduct.TextOffset = new System.Drawing.Point(20, 0);
+            this.bntProduct.Click += new System.EventHandler(this.bntProduct_Click);
             // 
             // btnCategory
             // 
