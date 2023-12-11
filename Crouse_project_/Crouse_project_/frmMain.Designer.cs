@@ -124,6 +124,7 @@
             this.btnKitchen.Text = "Kitchen";
             this.btnKitchen.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnKitchen.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnKitchen.Click += new System.EventHandler(this.btnKitchen_Click);
             // 
             // btnPOS
             // 

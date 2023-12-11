@@ -36,17 +36,17 @@ namespace Crouse_project_.Model
 
             if (id == 0) //Insert
             {
-                qry = "Insert into staff Values(@Name, @Phone,@role)";
+                qry = "Insert into Staff Values (@Name, @phone,@role)";
             }
             else //Update
             {
-                qry = "Update staff Set sName = @Name , sPhone = @Phone, sRole = @role where staffID = @id ";
+                qry = "Update Staff Set sName = @Name , sPhone = @phone, sRole = @role where staffID = @id ";
             }
 
             Hashtable ht = new Hashtable();
             ht.Add("@id", id);
             ht.Add("@Name", txtName.Text);
-            ht.Add("@Phone", txtPhone.Text);
+            ht.Add("@phone", txtPhone.Text);
             ht.Add("@role", cbRole.Text);
 
             if (MainClass.SQL(qry, ht) > 0)

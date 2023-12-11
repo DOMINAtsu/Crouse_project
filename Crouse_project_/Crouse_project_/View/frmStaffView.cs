@@ -40,7 +40,7 @@ namespace Crouse_project_.View
         {
             //frmCategoryAdd frm = new frmCategoryAdd();
             //frm.ShowDialog();
-            MainClass.BlurBackground(new frmStaffAdd());
+            MainClass.BlurBackground(new Model.frmStaffAdd());
             GetData();
         }
 
@@ -77,6 +77,7 @@ namespace Crouse_project_.View
                     string qry = "Delete from staff where staffID= " + id + "";
                     Hashtable ht = new Hashtable();
                     MainClass.SQL(qry, ht);
+
                     guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
                     guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
                     guna2MessageDialog1.Show("Deleted successfully");
