@@ -1,6 +1,6 @@
 ﻿namespace Crouse_project_
 {
-    partial class frmHome1
+    partial class frmHome
     {
         /// <summary>
         /// Required designer variable.

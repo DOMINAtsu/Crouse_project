@@ -55,7 +55,7 @@ namespace Crouse_project_
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            AddControls(new frmHome1());
+            AddControls(new frmHome());
         }
 
         private void btnCategory_Click(object sender, EventArgs e)

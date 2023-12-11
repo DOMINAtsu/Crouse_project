@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Crouse_project_
 {
-    public partial class frmHome1 : Form
+    public partial class frmHome : Form
     {
-        public frmHome1()
+        public frmHome()
         {
             InitializeComponent();
         }
