@@ -74,6 +74,7 @@ namespace Crouse_project_.View
                 lb4.Margin = new Padding(10, 5, 3, 10);
                 lb4.AutoSize = true;
 
+                //sdfkjbsdbdsfbsdk
 
 
                 lb1.Text = "Table : " + dt1.Rows[i]["TableName"].ToString();
