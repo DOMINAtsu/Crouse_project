@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Crouse_project_.View;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Crouse_project_.Model
 {
@@ -299,6 +301,9 @@ namespace Crouse_project_.Model
                 cmd2.ExecuteNonQuery(); 
                 if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
 
+                guna2MessageDialog1.Show("Saved Succssfully");
+                MainID = 0;
+                detailID = 0;
                 guna2DataGridView1.Rows.Clear();
                 lblTable.Text = "";
                 lblWaiter.Text = "";
@@ -307,6 +312,89 @@ namespace Crouse_project_.Model
                 lblTable.Text = "00";
             }
 
+        }
+        public int id = 0;
+        private void btnBill_Click(object sender, EventArgs e)
+        {
+            frmBillList frm = new frmBillList();
+            MainClass.BlurBackground(frm);
+
+            if(frm.MainID > 0)
+            {
+                id = frm.MainID;
+                LoadEntries();
+            }
+
+        }
+
+
+        private void LoadEntries()
+        {
+            string qry = @"Select * from tblMain m
+                                inner join tblDetails d on m.MainID = d.MainID
+                                inner join products p on p.pID = d.proID
+                                    where m.MainID = " + id + "";
+
+            SqlCommand cmd2 = new SqlCommand(qry, MainClass.con);
+            DataTable dt2 = new DataTable();
+            SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
+            da2.Fill(dt2);
+
+
+            if (dt2.Rows[0]["orderType"].ToString() == "Delivery")
+            {
+                btnDelivery.Checked = true;
+                lblWaiter.Visible = false;
+                lblTable.Visible = false;
+            }
+            else if(dt2.Rows[0]["orderType"].ToString() == "Take away")
+            {
+                 btnTake.Checked = true;
+                lblWaiter.Visible = false;
+                lblTable.Visible = false;
+            }
+            else
+            {
+                btnDin.Checked = true;
+                lblWaiter.Visible = true;
+                lblTable.Visible = true;
+            }
+
+            guna2DataGridView1.Rows.Clear();
+
+            foreach(DataRow item in dt2.Rows)
+            {
+                lblTable.Text = item["TableName"].ToString();
+                lblWaiter.Text = item["WaiterName"].ToString();
+
+                string detailid = item["DetailID"].ToString();
+                string proName = item["proName"].ToString();
+                string proid = item["proID"].ToString();
+                string qty = item["qty"].ToString();
+                string price = item["price"].ToString();
+                string amount = item["amount"].ToString();
+
+                object[] obj = { 0, detailid,proid, proName, qty, price,amount };
+                guna2DataGridView1.Rows.Add(obj);
+            }
+            GetTotal();
+
+        }
+
+        private void btnCheckout_Click(object sender, EventArgs e)
+        {
+            frmCheckout frm = new frmCheckout();
+            frm.MainID = id;
+            frm.amt = Convert.ToDouble(lblTotal.Text);
+            MainClass.BlurBackground(frm);
+
+            MainID = 0;            
+            guna2DataGridView1.Rows.Clear();
+            lblTable.Text = "";
+            lblWaiter.Text = "";
+            lblTable.Visible = false;
+            lblTable.Visible = false;
+            lblTable.Text = "00";
         }
     }
 }

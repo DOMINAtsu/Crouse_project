@@ -23,7 +23,7 @@ namespace Crouse_project_.View
 
         public void GetData()
         {
-            string qry = "Select * From category where catName like '%"+ txtSearch.Text+"%' ";
+            string qry = "Select * From category where catName like '%" + txtSearch.Text + "%' ";
             ListBox lb = new ListBox();
             lb.Items.Add(dgvid);
             lb.Items.Add(dgvName);
@@ -53,7 +53,7 @@ namespace Crouse_project_.View
         {
             if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvedit")
             {
-               // this is change as we have to set form text properties befort open
+                // this is change as we have to set form text properties befort open
                 frmCategoryAdd frm = new frmCategoryAdd();
                 frm.id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
                 frm.txtName.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvName"].Value);
@@ -61,7 +61,7 @@ namespace Crouse_project_.View
                 GetData();
 
             }
-            if(guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvdel")
+            if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvdel")
             {
 
                 // need to confirm before delete
@@ -80,9 +80,9 @@ namespace Crouse_project_.View
                     guna2MessageDialog1.Show("Deleted successfully");
                     GetData();
                 }
-                
+
             }
-           
+
         }
     }
 }
