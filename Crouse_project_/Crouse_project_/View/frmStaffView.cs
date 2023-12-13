@@ -17,6 +17,7 @@ namespace Crouse_project_.View
         public frmStaffView()
         {
             InitializeComponent();
+            
         }
 
         private void frmStaffView_Load(object sender, EventArgs e)
@@ -38,9 +39,9 @@ namespace Crouse_project_.View
 
         public override void btnAdd_Click(object sender, EventArgs e)
         {
+            MainClass.BlurBackground(new Model.frmStaffAdd());
             //frmCategoryAdd frm = new frmCategoryAdd();
             //frm.ShowDialog();
-            MainClass.BlurBackground(new Model.frmStaffAdd());
             GetData();
         }
 
@@ -87,5 +88,7 @@ namespace Crouse_project_.View
             }
 
         }
+
+        
     }
 }

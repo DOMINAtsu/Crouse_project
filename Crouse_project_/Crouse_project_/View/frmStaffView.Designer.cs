@@ -188,6 +188,7 @@
             this.Controls.Add(this.guna2DataGridView1);
             this.Name = "frmStaffView";
             this.Text = "frmStaffView";
+            this.Load += new System.EventHandler(this.frmStaffView_Load);
             this.Controls.SetChildIndex(this.btnAdd, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.guna2DataGridView1, 0);
