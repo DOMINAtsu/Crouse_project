@@ -85,3 +85,4 @@ C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\
 C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.View.frmKitchenView.resources
 C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.View.frmBillList.resources
 C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.Model.frmCheckout.resources
+C:\Users\bezme\Desktop\бнту\КП\Crouse_SwC\Crouse_project_\Crouse_project_\obj\Debug\Crouse_project_.Model.frmAddCustomer.resources

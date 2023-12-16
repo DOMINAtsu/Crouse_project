@@ -74,7 +74,7 @@ namespace Crouse_project_.View
                 lb4.Margin = new Padding(10, 5, 3, 10);
                 lb4.AutoSize = true;
 
-                //sdfkjbsdbdsfbsdk
+                
 
 
                 lb1.Text = "Table : " + dt1.Rows[i]["TableName"].ToString();
@@ -94,7 +94,7 @@ namespace Crouse_project_.View
                 int mid = 0;
                 mid = Convert.ToInt32(dt1.Rows[i]["MainID"].ToString());
 
-                string qry2 = @"Select * from tblMain m
+                string qry2 = @"Select * from tblMain m 
                                 inner join tblDetails d on m.MainID = d.MainID
                                 inner join products p on p.pID = d.proID
                                     where m.MainID = " + mid + "";
@@ -108,7 +108,7 @@ namespace Crouse_project_.View
                 for (int j = 0; j < dt2.Rows.Count; j++)
                 {
                     Label lb5 = new Label();
-                    lb5.ForeColor = Color.White;
+                    lb5.ForeColor = Color.Black;
                     lb5.Margin = new Padding(10, 5, 3, 0);
                     lb5.AutoSize = true;
 

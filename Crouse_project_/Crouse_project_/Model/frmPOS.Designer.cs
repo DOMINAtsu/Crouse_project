@@ -60,6 +60,7 @@
             this.ProductPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblDriverName = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -221,6 +222,7 @@
             this.btnHold.Size = new System.Drawing.Size(78, 78);
             this.btnHold.TabIndex = 6;
             this.btnHold.Text = "Hold";
+            this.btnHold.Click += new System.EventHandler(this.btnHold_Click);
             // 
             // btnNew
             // 
@@ -536,7 +538,7 @@
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.IconLeft = global::Crouse_project_.Properties.Resources.icons8_search_512;
-            this.txtSearch.Location = new System.Drawing.Point(167, 114);
+            this.txtSearch.Location = new System.Drawing.Point(821, 114);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "Search Here";
@@ -545,10 +547,24 @@
             this.txtSearch.TabIndex = 9;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
+            // lblDriverName
+            // 
+            this.lblDriverName.AutoSize = true;
+            this.lblDriverName.BackColor = System.Drawing.Color.Transparent;
+            this.lblDriverName.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblDriverName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblDriverName.Location = new System.Drawing.Point(162, 114);
+            this.lblDriverName.Name = "lblDriverName";
+            this.lblDriverName.Size = new System.Drawing.Size(64, 30);
+            this.lblDriverName.TabIndex = 12;
+            this.lblDriverName.Text = "Table";
+            this.lblDriverName.Visible = false;
+            // 
             // frmPOS
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1087, 681);
+            this.Controls.Add(this.lblDriverName);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.ProductPanel);
@@ -569,6 +585,7 @@
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -603,5 +620,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvAmount;
         public Guna.UI2.WinForms.Guna2Button btnCheckout;
+        private System.Windows.Forms.Label lblDriverName;
     }
 }

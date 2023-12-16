@@ -64,6 +64,11 @@ namespace Crouse_project_.View
 
             }
 
+            if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvdel")
+            {
+                //Print bill
+            }
+
         }
     }
 }

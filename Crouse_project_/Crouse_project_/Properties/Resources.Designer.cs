@@ -383,6 +383,16 @@ namespace Crouse_project_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_print_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-print-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_products_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-products-64", resourceCulture);

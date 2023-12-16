@@ -35,10 +35,10 @@ namespace Crouse_project_.Model
             txtChange.Text = change.ToString();
         }
         public override void btnSave_Click(object sender, EventArgs e)
-        {
+        {/////////////////
             string qry = @"Update tblMain set total = @total, received = @rec , change = @change,
                                 status = 'Paid' where MainID = @id";
-
+            ////////////////
             Hashtable ht = new Hashtable();
             ht.Add("@id", MainID);
             ht.Add("@total", txtBillAmount.Text);

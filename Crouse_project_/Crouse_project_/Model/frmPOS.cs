@@ -23,7 +23,12 @@ namespace Crouse_project_.Model
         }
 
         public int MainID = 0;
-        public string OrderType;
+        public string OrderType = "";
+        public int driverID = 0;
+        public string customerName = "";
+        public string customerPhone = "";
+
+
         private void guna2PictureBox2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -115,7 +120,7 @@ namespace Crouse_project_.Model
 
                 }
                 //this line add new product First for sr# and 2nd 0 from id
-                guna2DataGridView1.Rows.Add(new object[] {0, 0, wdg.id, wdg.PName, 1, wdg.PPrice, wdg.PPrice });
+                guna2DataGridView1.Rows.Add(new object[] { 0, 0, wdg.id, wdg.PName, 1, wdg.PPrice, wdg.PPrice });
                 GetTotal();
             };
         }
@@ -194,6 +199,21 @@ namespace Crouse_project_.Model
             lblTable.Visible = false;
             lblTable.Visible = false;
             OrderType = "Delivery";
+
+            frmAddCustomer frm = new frmAddCustomer();
+            frm.mainID = MainID;
+            frm.orderType = OrderType;
+            MainClass.BlurBackground(frm);
+
+            if (frm.txtName.Text != "")//as take away did not have driver info
+            {
+                driverID = frm.driverID;
+                lblDriverName.Text = "Customer Name: " + frm.txtName.Text + " Phone: " + frm.txtPhone.Text + " Driver: " + frm.cbDriver.Text;
+                lblDriverName.Visible = true;
+                customerName = frm.txtName.Text;
+                customerPhone = frm.txtPhone.Text;
+
+            }
         }
 
         private void btnTake_Click(object sender, EventArgs e)
@@ -203,11 +223,27 @@ namespace Crouse_project_.Model
             lblTable.Visible = false;
             lblTable.Visible = false;
             OrderType = "Take Away";
+
+            frmAddCustomer frm = new frmAddCustomer();
+            frm.mainID = MainID;
+            frm.orderType = OrderType;
+            MainClass.BlurBackground(frm);
+
+            if(frm.txtName.Text != "")//as take away did not have driver info
+            {
+                driverID = frm.driverID;
+                lblDriverName.Text = "Customer Name: " + frm.txtName.Text + " Phone: " + frm.txtPhone.Text ;
+                lblDriverName.Visible = true;
+                customerName = frm.txtName.Text;
+                customerPhone = frm.txtPhone.Text;
+
+            }
         }
 
         private void btnDin_Click(object sender, EventArgs e)
         {
             OrderType = "Din in";
+            lblDriverName.Visible= false;
             // need to create from table selection and waiter selection
             frmTableSelect frm = new frmTableSelect();
             MainClass.BlurBackground(frm);
@@ -246,10 +282,10 @@ namespace Crouse_project_.Model
 
             int detailID = 0;
 
-            if(MainID == 0)//Insert
+            if (MainID == 0)//Insert
             {
                 qry1 = @"Insert into tblMain Values(@aDate ,@aTime ,@TableName ,@WaiterName ,
-                            @status ,@orderType ,@total ,@received ,@change);
+                            @status ,@orderType ,@total ,@received ,@change, @driverID,@CustName,@CustPhone);
                                       Select SCOPE_IDENTITY()";
                 //this line will get recent add id value
             }
@@ -260,26 +296,29 @@ namespace Crouse_project_.Model
             }
 
             SqlCommand cmd = new SqlCommand(qry1, MainClass.con);
-            cmd.Parameters.AddWithValue("@ID",MainID);
-            cmd.Parameters.AddWithValue("@aDate",Convert.ToDateTime(DateTime.Now.Date));
-            cmd.Parameters.AddWithValue("@aTime",DateTime.Now.ToShortTimeString());
-            cmd.Parameters.AddWithValue("@TableName",lblTable.Text);
-            cmd.Parameters.AddWithValue("@WaiterName",lblWaiter.Text);
-            cmd.Parameters.AddWithValue("@status","Pending");
-            cmd.Parameters.AddWithValue("@orderType",OrderType);
-            cmd.Parameters.AddWithValue("@total",Convert.ToDouble(lblTotal.Text));// as we only saving data for kitchen value will update when payment received
-            cmd.Parameters.AddWithValue("@received",Convert.ToDouble(0));
-            cmd.Parameters.AddWithValue("@change",Convert.ToDouble(0));
+            cmd.Parameters.AddWithValue("@ID", MainID);
+            cmd.Parameters.AddWithValue("@aDate", Convert.ToDateTime(DateTime.Now.Date));
+            cmd.Parameters.AddWithValue("@aTime", DateTime.Now.ToShortTimeString());
+            cmd.Parameters.AddWithValue("@TableName", lblTable.Text);
+            cmd.Parameters.AddWithValue("@WaiterName", lblWaiter.Text);
+            cmd.Parameters.AddWithValue("@status", "Pending");
+            cmd.Parameters.AddWithValue("@orderType", OrderType);
+            cmd.Parameters.AddWithValue("@total", Convert.ToDouble(lblTotal.Text));// as we only saving data for kitchen value will update when payment received
+            cmd.Parameters.AddWithValue("@received", Convert.ToDouble(0));
+            cmd.Parameters.AddWithValue("@change", Convert.ToDouble(0));
+            cmd.Parameters.AddWithValue("@driverID", driverID);
+            cmd.Parameters.AddWithValue("@CustName", customerName);
+            cmd.Parameters.AddWithValue("@CustPhone", customerPhone);
 
-            if(MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
-            if(MainID == 0) { MainID = Convert.ToInt32(cmd.ExecuteScalar()); } else { cmd.ExecuteNonQuery(); }
-            if(MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
+            if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
+            if (MainID == 0) { MainID = Convert.ToInt32(cmd.ExecuteScalar()); } else { cmd.ExecuteNonQuery(); }
+            if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
 
-            foreach(DataGridViewRow row in guna2DataGridView1.Rows)
+            foreach (DataGridViewRow row in guna2DataGridView1.Rows)
             {
                 detailID = Convert.ToInt32(row.Cells["dgvid"].Value);
 
-                if(detailID == 0)//insert
+                if (detailID == 0)//insert
                 {
                     qry2 = @" Insert into tblDetails Values( @MainID , @proID ,@qty ,@price , @amount) ";
                 }
@@ -292,13 +331,13 @@ namespace Crouse_project_.Model
                 SqlCommand cmd2 = new SqlCommand(qry2, MainClass.con);
                 cmd2.Parameters.AddWithValue("@ID", detailID);
                 cmd2.Parameters.AddWithValue("@MainID", MainID);
-                cmd2.Parameters.AddWithValue("@proID",Convert.ToInt32(row.Cells["dgvproID"].Value));
+                cmd2.Parameters.AddWithValue("@proID", Convert.ToInt32(row.Cells["dgvproID"].Value));
                 cmd2.Parameters.AddWithValue("@qty", Convert.ToInt32(row.Cells["dgvQty"].Value));
                 cmd2.Parameters.AddWithValue("@Price", Convert.ToDouble(row.Cells["dgvPrice"].Value));
                 cmd2.Parameters.AddWithValue("@amount", Convert.ToDouble(row.Cells["dgvAmount"].Value));
 
                 if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
-                cmd2.ExecuteNonQuery(); 
+                cmd2.ExecuteNonQuery();
                 if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
 
                 guna2MessageDialog1.Show("Saved Succssfully");
@@ -310,6 +349,7 @@ namespace Crouse_project_.Model
                 lblTable.Visible = false;
                 lblTable.Visible = false;
                 lblTable.Text = "00";
+                lblDriverName.Text = "";
             }
 
         }
@@ -319,9 +359,10 @@ namespace Crouse_project_.Model
             frmBillList frm = new frmBillList();
             MainClass.BlurBackground(frm);
 
-            if(frm.MainID > 0)
+            if (frm.MainID > 0)
             {
                 id = frm.MainID;
+                MainID = frm.MainID;
                 LoadEntries();
             }
 
@@ -347,9 +388,9 @@ namespace Crouse_project_.Model
                 lblWaiter.Visible = false;
                 lblTable.Visible = false;
             }
-            else if(dt2.Rows[0]["orderType"].ToString() == "Take away")
+            else if (dt2.Rows[0]["orderType"].ToString() == "Take away")
             {
-                 btnTake.Checked = true;
+                btnTake.Checked = true;
                 lblWaiter.Visible = false;
                 lblTable.Visible = false;
             }
@@ -362,19 +403,19 @@ namespace Crouse_project_.Model
 
             guna2DataGridView1.Rows.Clear();
 
-            foreach(DataRow item in dt2.Rows)
+            foreach (DataRow item in dt2.Rows)
             {
                 lblTable.Text = item["TableName"].ToString();
                 lblWaiter.Text = item["WaiterName"].ToString();
 
                 string detailid = item["DetailID"].ToString();
-                string proName = item["proName"].ToString();
+                string proName = item["pName"].ToString();
                 string proid = item["proID"].ToString();
                 string qty = item["qty"].ToString();
                 string price = item["price"].ToString();
                 string amount = item["amount"].ToString();
 
-                object[] obj = { 0, detailid,proid, proName, qty, price,amount };
+                object[] obj = { 0, detailid, proid, proName, qty, price, amount };
                 guna2DataGridView1.Rows.Add(obj);
             }
             GetTotal();
@@ -388,13 +429,97 @@ namespace Crouse_project_.Model
             frm.amt = Convert.ToDouble(lblTotal.Text);
             MainClass.BlurBackground(frm);
 
-            MainID = 0;            
+            MainID = 0;
             guna2DataGridView1.Rows.Clear();
             lblTable.Text = "";
             lblWaiter.Text = "";
             lblTable.Visible = false;
             lblTable.Visible = false;
             lblTable.Text = "00";
+        }
+
+        private void btnHold_Click(object sender, EventArgs e)
+        {
+            string qry1 = "";
+            string qry2 = "";
+
+            int detailID = 0;
+
+            if (OrderType =="")
+            {
+                guna2MessageDialog1.Show("Plesse select order type");
+                return;
+            }
+
+            if (MainID == 0)//Insert
+            {
+                qry1 = @"Insert into tblMain Values(@aDate ,@aTime ,@TableName ,@WaiterName ,
+                            @status ,@orderType ,@total ,@received ,@change, @driverID,@CustName,@CustPhone);
+                                      Select SCOPE_IDENTITY()";
+                //this line will get recent add id value
+            }
+            else
+            {
+                qry1 = @"Update tblMain Set status = @status , total = @total ,
+                                received = @received , change = @change where MainID = @ID";
+            }
+
+            SqlCommand cmd = new SqlCommand(qry1, MainClass.con);
+            cmd.Parameters.AddWithValue("@ID", MainID);
+            cmd.Parameters.AddWithValue("@aDate", Convert.ToDateTime(DateTime.Now.Date));
+            cmd.Parameters.AddWithValue("@aTime", DateTime.Now.ToShortTimeString());
+            cmd.Parameters.AddWithValue("@TableName", lblTable.Text);
+            cmd.Parameters.AddWithValue("@WaiterName", lblWaiter.Text);
+            cmd.Parameters.AddWithValue("@status", "Hold");
+            cmd.Parameters.AddWithValue("@orderType", OrderType);
+            cmd.Parameters.AddWithValue("@total", Convert.ToDouble(lblTotal.Text));// as we only saving data for kitchen value will update when payment received
+            cmd.Parameters.AddWithValue("@received", Convert.ToDouble(0));
+            cmd.Parameters.AddWithValue("@change", Convert.ToDouble(0));
+            cmd.Parameters.AddWithValue("@driverID", driverID);
+            cmd.Parameters.AddWithValue("@CustName", customerName);
+            cmd.Parameters.AddWithValue("@CustPhone", customerPhone);
+
+            if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
+            if (MainID == 0) { MainID = Convert.ToInt32(cmd.ExecuteScalar()); } else { cmd.ExecuteNonQuery(); }
+            if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
+
+            foreach (DataGridViewRow row in guna2DataGridView1.Rows)
+            {
+                detailID = Convert.ToInt32(row.Cells["dgvid"].Value);
+
+                if (detailID == 0)//insert
+                {
+                    qry2 = @" Insert into tblDetails Values( @MainID , @proID ,@qty ,@price , @amount) ";
+                }
+                else//Update
+                {
+                    qry2 = @" Update tblDetails Set proID = @proID , qty = @qty , price = @price , amount = @amount 
+                                where DetailID = @ID ";
+                }
+
+                SqlCommand cmd2 = new SqlCommand(qry2, MainClass.con);
+                cmd2.Parameters.AddWithValue("@ID", detailID);
+                cmd2.Parameters.AddWithValue("@MainID", MainID);
+                cmd2.Parameters.AddWithValue("@proID", Convert.ToInt32(row.Cells["dgvproID"].Value));
+                cmd2.Parameters.AddWithValue("@qty", Convert.ToInt32(row.Cells["dgvQty"].Value));
+                cmd2.Parameters.AddWithValue("@Price", Convert.ToDouble(row.Cells["dgvPrice"].Value));
+                cmd2.Parameters.AddWithValue("@amount", Convert.ToDouble(row.Cells["dgvAmount"].Value));
+
+                if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
+                cmd2.ExecuteNonQuery();
+                if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
+
+                guna2MessageDialog1.Show("Saved Succssfully");
+                MainID = 0;
+                detailID = 0;
+                guna2DataGridView1.Rows.Clear();
+                lblTable.Text = "";
+                lblWaiter.Text = "";
+                lblTable.Visible = false;
+                lblTable.Visible = false;
+                lblTable.Text = "00";
+                lblDriverName.Text = "";
+            }
         }
     }
 }
