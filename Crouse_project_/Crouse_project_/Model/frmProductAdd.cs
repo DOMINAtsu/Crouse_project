@@ -95,7 +95,7 @@ namespace Crouse_project_.Model
 
         private void ForUpdateLoadData()
         {
-            string qry = "@Select * from products where pid = " + id + "";
+            string qry = @"Select * from products where pid = " + id + "";
             SqlCommand cmd = new SqlCommand(qry, MainClass.con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

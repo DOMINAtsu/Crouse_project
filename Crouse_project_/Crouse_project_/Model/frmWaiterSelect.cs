@@ -21,7 +21,7 @@ namespace Crouse_project_.Model
         public string waiterName;
 
         private void frmWaiterSelect_Load(object sender, EventArgs e)
-        {
+        {   //
             string qry = "Select * from staff where sRole Like 'Waiter'";
             SqlCommand cmd = new SqlCommand(qry, MainClass.con);
             DataTable dt = new DataTable();

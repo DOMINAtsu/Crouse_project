@@ -103,7 +103,8 @@
             this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowTemplate.Height = 35;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(776, 315);
+            this.guna2DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.guna2DataGridView1.Size = new System.Drawing.Size(776, 429);
             this.guna2DataGridView1.TabIndex = 6;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -205,7 +206,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 564);
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.guna2ControlBox1);
             this.Name = "frmBillList";
